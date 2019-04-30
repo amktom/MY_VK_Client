@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigator = Navigator(this, supportFragmentManager, R.id.content)
-//        App.INCTANCE.router.newRootScreen(Screen.ProfileViewScreen())
+        App.INCTANCE.router.newRootScreen(com.example.my_vk_client.navigation.Screen.LoginScreen())
     }
 
     override fun onResume() {
