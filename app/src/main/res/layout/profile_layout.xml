@@ -14,8 +14,8 @@
                 android:gravity="bottom"
                 android:background="@color/white"
                 android:minHeight="?android:attr/actionBarSize"
-                android:elevation="0dp"
                 app:title="@string/profileTitle"
+                app:elevation="0dp"
                 app:titleTextAppearance="@style/Toolbar.TitleText"
                 app:titleTextColor="@color/black"/>
 
