@@ -3,6 +3,7 @@ package com.example.my_vk_client.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import com.example.my_vk_client.R
 
 class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {

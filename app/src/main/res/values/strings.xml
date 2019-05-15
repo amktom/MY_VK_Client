@@ -3,5 +3,5 @@
     <string name="splash"> Splash</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="profileTitle">Profile</string>
+    <string name="profileTitle">Профиль</string>
 </resources>

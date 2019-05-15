@@ -5,7 +5,8 @@
                                                      xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
                 android:id="@+id/profileViewToolbar"
@@ -13,9 +14,9 @@
                 android:layout_height="128dp"
                 android:gravity="bottom"
                 android:background="@color/white"
+                android:elevation="0dp"
                 android:minHeight="?android:attr/actionBarSize"
                 app:title="@string/profileTitle"
-                app:elevation="0dp"
                 app:titleTextAppearance="@style/Toolbar.TitleText"
                 app:titleTextColor="@color/black"/>
 
