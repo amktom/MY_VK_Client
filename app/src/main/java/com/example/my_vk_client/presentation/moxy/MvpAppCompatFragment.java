@@ -1,4 +1,4 @@
-package com.example.my_vk_client.moxy;
+package com.example.my_vk_client.presentation.moxy;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;

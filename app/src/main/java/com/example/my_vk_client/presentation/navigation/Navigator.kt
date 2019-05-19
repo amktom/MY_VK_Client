@@ -1,4 +1,4 @@
-package com.example.my_vk_client.navigation
+package com.example.my_vk_client.presentation.navigation
 
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager

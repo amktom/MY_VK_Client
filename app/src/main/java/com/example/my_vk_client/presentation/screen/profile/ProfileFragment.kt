@@ -1,12 +1,12 @@
-package com.example.my_vk_client.fragment
+package com.example.my_vk_client.presentation.screen.profile
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import com.example.my_vk_client.R
+import com.example.my_vk_client.presentation.common.BaseFragment
 
-class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
+class ProfileFragment : BaseFragment(R.layout.profile_layout),
+    ProfileView {
     override fun showProfile(firstName: String) {
         TODO("show profile fields")
     }
