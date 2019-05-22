@@ -2,15 +2,30 @@ package com.example.my_vk_client.presentation.screen.profile
 
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.my_vk_client.R
 import com.example.my_vk_client.presentation.common.BaseFragment
 import com.example.my_vk_client.presentation.models.Profile
+import javax.inject.Inject
 
 class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
 
+    @Inject
+    @InjectPresenter
     lateinit var presenter: ProfilePresenter
 
     private val feedAdapter = FeedAdapter()
+
+    @ProvidePresenter
+    fun providePresenter(): ProfilePresenter = presenter
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        initToolbar()
+//        initFeed()
+    }
 
     override fun showProfile(profile: Profile) {
         feedAdapter.setProfile(profile)
@@ -20,21 +35,11 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
         TODO("magic")
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-//        initToolbar()
-//        initFeed()
-    }
-
-
 
     private fun initToolbar() {
         TODO("initialise ToolBar")
     }
 
     private fun initFeed() {
-        TODO("show Feed")
-        showFeed()
     }
 }
