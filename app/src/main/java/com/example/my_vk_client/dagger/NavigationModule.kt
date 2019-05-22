@@ -8,7 +8,7 @@ import ru.terrakok.cicerone.Router
 import javax.inject.Singleton
 
 @Module
-interface NavigationModule {
+class NavigationModule {
 
     @Singleton
     @Provides

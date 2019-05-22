@@ -1,5 +1,6 @@
 package com.example.my_vk_client
 
+import com.example.my_vk_client.dagger.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 
