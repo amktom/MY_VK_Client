@@ -18,4 +18,12 @@
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
+
+    <style name="AppTheme.WallCard" parent="CardView.Light">
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
 </resources>

@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.view.View
 import com.example.my_vk_client.R
 import com.example.my_vk_client.presentation.common.BaseFragment
+import com.example.my_vk_client.presentation.models.Profile
 
-class ProfileFragment : BaseFragment(R.layout.profile_layout),
-    ProfileView {
-    override fun showProfile(firstName: String) {
-        TODO("show profile fields")
+class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
+
+    lateinit var presenter: ProfilePresenter
+
+    private val feedAdapter = FeedAdapter()
+
+    override fun showProfile(profile: Profile) {
+        feedAdapter.setProfile(profile)
     }
 
     override fun showFeed() {
@@ -17,6 +22,7 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 //        initToolbar()
 //        initFeed()
     }
