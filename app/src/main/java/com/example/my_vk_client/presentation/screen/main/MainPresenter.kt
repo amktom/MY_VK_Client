@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 
 @InjectViewState
-class MainPresenter @Inject constructor(private val router: Router) : BasePresenter<MainVew>() {
+class MainPresenter @Inject constructor(private val router: Router) : BasePresenter<MainView>() {
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         router.newRootScreen(Screen.SplashScreen())

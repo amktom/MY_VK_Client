@@ -2,5 +2,5 @@ package com.example.my_vk_client.presentation.screen.main
 
 import com.arellomobile.mvp.MvpView
 
-interface MainVew : MvpView{
+interface MainView : MvpView{
 }

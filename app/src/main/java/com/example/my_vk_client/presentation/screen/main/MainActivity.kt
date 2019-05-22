@@ -16,7 +16,7 @@ import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.android.support.SupportAppNavigator
 import javax.inject.Inject
 
-class MainActivity : MvpAppCompatActivity(), HasSupportFragmentInjector, MainVew {
+class MainActivity : MvpAppCompatActivity(), HasSupportFragmentInjector, MainView {
 
     @Inject
     @InjectPresenter

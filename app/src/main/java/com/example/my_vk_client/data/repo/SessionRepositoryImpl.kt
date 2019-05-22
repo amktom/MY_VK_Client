@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class SessionRepositoryImpl @Inject constructor() : SessionRepository {
 
-    override fun isAuth(): Boolean = false
+    override fun isAuth(): Boolean = true
 
 }
