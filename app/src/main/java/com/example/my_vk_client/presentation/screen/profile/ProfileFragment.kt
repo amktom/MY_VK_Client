@@ -8,6 +8,8 @@ import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.my_vk_client.R
 import com.example.my_vk_client.presentation.common.BaseFragment
 import com.example.my_vk_client.presentation.models.Profile
+import com.example.my_vk_client.presentation.models.WallPost
+import kotlinx.android.synthetic.main.profile_layout.*
 import javax.inject.Inject
 
 class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
@@ -31,8 +33,8 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
         feedAdapter.setProfile(profile)
     }
 
-    override fun showFeed() {
-        TODO("magic")
+    override fun showFeed(posts: List<WallPost>) {
+        feedAdapter.setPosts(posts)
     }
 
 

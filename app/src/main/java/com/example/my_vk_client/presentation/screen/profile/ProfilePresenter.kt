@@ -1,6 +1,7 @@
 package com.example.my_vk_client.presentation.screen.profile
 
 import com.arellomobile.mvp.InjectViewState
+import com.example.my_vk_client.domain.repo.PostRepository
 import com.example.my_vk_client.domain.repo.ProfileRepository
 import com.example.my_vk_client.presentation.common.BasePresenter
 import ru.terrakok.cicerone.Router
@@ -9,7 +10,8 @@ import javax.inject.Inject
 @InjectViewState
 class ProfilePresenter @Inject constructor(
     private val router: Router,
-    private val profileRepository: ProfileRepository
+    private val profileRepository: ProfileRepository,
+    private val postRepository: PostRepository
 ) : BasePresenter<ProfileView>() {
 
     override fun onFirstViewAttach() {
@@ -22,5 +24,6 @@ class ProfilePresenter @Inject constructor(
 
     private fun setData(){
         viewState.showProfile(profileRepository.getProfile())
+        viewState.showFeed(postRepository.getAll())
     }
 }
