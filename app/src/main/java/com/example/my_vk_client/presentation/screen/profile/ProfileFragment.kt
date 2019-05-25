@@ -26,7 +26,7 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        initToolbar()
-//        initFeed()
+        initFeed()
     }
 
     override fun showProfile(profile: Profile) {
@@ -43,5 +43,7 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
     }
 
     private fun initFeed() {
+        feed.layoutManager = LinearLayoutManager(context)
+        feed.adapter = feedAdapter
     }
 }
