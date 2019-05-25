@@ -23,14 +23,13 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when(viewType) {
-       PROFILE ->
-           ProfileHolder(LayoutInflater.
-                           from(parent.context).
-                           inflate(R.layout.wall_items_profile, parent, false))
-       POST -> PostHolder(LayoutInflater.
-               from(parent.context).
-               inflate(R.layout.post_layout, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder = when (viewType) {
+        PROFILE -> ProfileHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.wall_items_profile, parent, false)
+        )
+        POST -> PostHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.post_layout, parent, false)
+        )
 
         else -> throw IllegalArgumentException("viewType $viewType not found")
     }
@@ -50,5 +49,9 @@ class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         items.add(profile)
         items.addAll(posts)
         notifyDataSetChanged()
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position == 0) PROFILE else POST
     }
 }
