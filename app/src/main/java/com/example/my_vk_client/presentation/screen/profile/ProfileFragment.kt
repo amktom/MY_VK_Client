@@ -12,9 +12,11 @@ import com.example.my_vk_client.presentation.models.WallPost
 import kotlinx.android.synthetic.main.profile_layout.*
 import javax.inject.Inject
 
-
-
 class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
+
+    companion object {
+        fun createInstance() = ProfileFragment()
+    }
 
     @Inject
     @InjectPresenter

@@ -7,7 +7,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.my_vk_client"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -34,6 +34,8 @@ dependencies {
     implementation 'com.arello-mobile:moxy:1.5.5'
     implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
     implementation 'com.android.support:design:28.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
     kapt 'com.arello-mobile:moxy-compiler:1.5.5'
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
@@ -43,6 +45,11 @@ dependencies {
 
     implementation 'com.google.dagger:dagger-android-support:2.22.1' // if you use the support libraries
     kapt 'com.google.dagger:dagger-android-processor:2.22.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'

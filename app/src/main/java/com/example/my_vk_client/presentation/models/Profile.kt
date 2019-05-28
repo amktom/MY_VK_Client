@@ -1,9 +1,7 @@
 package com.example.my_vk_client.presentation.models
 
-import android.net.Uri
-
 class Profile (
-    id: Int,
+    id: Long,
     val firstName: String,
     val lastName: String,
     val avatarUrl: String,

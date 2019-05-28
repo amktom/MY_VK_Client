@@ -7,4 +7,5 @@ import com.example.my_vk_client.presentation.models.WallPost
 interface ProfileView : MvpView {
     fun showProfile(profile: Profile)
     fun showFeed(posts: List<WallPost>)
+    fun showNetworkError()
 }
