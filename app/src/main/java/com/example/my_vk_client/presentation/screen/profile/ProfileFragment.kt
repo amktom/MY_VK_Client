@@ -13,6 +13,17 @@ import kotlinx.android.synthetic.main.profile_layout.*
 import javax.inject.Inject
 
 class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
+    override fun showNetworkError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun showProgress() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun hideProgress() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     companion object {
         fun createInstance() = ProfileFragment()

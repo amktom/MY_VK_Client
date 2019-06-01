@@ -7,7 +7,9 @@ import com.example.my_vk_client.domain.repo.entity.Post
 import com.example.my_vk_client.domain.repo.entity.User
 import com.example.my_vk_client.presentation.converter.PresentationConverter
 import com.example.my_vk_client.presentation.converter.ProfileConverter
+import com.example.my_vk_client.presentation.converter.WallConverter
 import com.example.my_vk_client.presentation.models.Profile
+import com.example.my_vk_client.presentation.models.WallPost
 import com.example.my_vk_client.response.PostResponse
 import com.example.my_vk_client.response.ProfileResponse
 import dagger.Binds
@@ -28,4 +30,8 @@ interface ConverterModule {
     @Reusable
     @Binds
     fun bindPostConverter(instance: PostsConverter): DataConverter<PostResponse, List<Post>>
+
+    @Reusable
+    @Binds
+    fun bindWallConverter(instance: WallConverter): PresentationConverter<Post, WallPost>
 }

@@ -10,12 +10,12 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(
-        private val profileDataSource: ProfileSource,
-        private val userConverter: DataConverter<ProfileResponse, User>
+    private val profileDataSource: ProfileSource,
+    private val userConverter: DataConverter<ProfileResponse, User>
 ) : ProfileRepository {
 
-        override fun getProfile(): Single<User> =
-                profileDataSource.getProfile()
-                        .subscribeOn(Schedulers.io())
-                        .map(userConverter::convert)
+    override fun getProfile(): Single<User> =
+        profileDataSource.getProfile()
+            .subscribeOn(Schedulers.io())
+            .map(userConverter::convert)
 }

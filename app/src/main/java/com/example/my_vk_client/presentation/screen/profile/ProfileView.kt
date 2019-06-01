@@ -8,4 +8,6 @@ interface ProfileView : MvpView {
     fun showProfile(profile: Profile)
     fun showFeed(posts: List<WallPost>)
     fun showNetworkError()
+    fun showProgress()
+    fun hideProgress()
 }

@@ -58,4 +58,9 @@ abstract class DataModule {
     @Binds
     abstract fun bindProfileRepository(instance: ProfileRepositoryImpl): ProfileRepository
 
+    @Reusable
+    @Binds
+    abstract fun bindPostDataSource(instance: PostDataSourceImpl): PostDataSource
+
+
 }
