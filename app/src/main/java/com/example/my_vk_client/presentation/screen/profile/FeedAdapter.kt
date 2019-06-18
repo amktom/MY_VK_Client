@@ -51,9 +51,9 @@ class FeedAdapter(private val loadPostsPage: () -> Unit) : RecyclerView.Adapter<
     }
 
     fun setPosts(posts: List<WallItem>) {
-        val profile = items[0]
-        items.clear()
-        items.add(profile)
+//        val profile = items[0]
+//        items.clear()
+//        items.add(profile)
         items.addAll(posts)
         notifyDataSetChanged()
     }

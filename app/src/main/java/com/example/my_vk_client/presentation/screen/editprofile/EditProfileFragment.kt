@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.fragment_edit_profile.*
 import javax.inject.Inject
 
 class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile), EditProfileView {
+
     override fun setProfile(profile: Profile) {
         editFirstName.setText(profile.firstName)
         editLastName.setText(profile.lastName)
@@ -51,7 +52,8 @@ class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile), EditPr
     fun providePresenter(): EditProfilePresenter = presenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        initToolBar()
+
     }
 
     private fun initToolBar() {

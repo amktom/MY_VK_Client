@@ -96,6 +96,6 @@ class ApiMock @Inject constructor() : Api {
                 )
             }.flatten())
         )
-            .delay(2, TimeUnit.SECONDS)
+            .delay(3, TimeUnit.SECONDS)
     
 }
