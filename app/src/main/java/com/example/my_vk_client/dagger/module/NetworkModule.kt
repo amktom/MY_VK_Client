@@ -2,8 +2,8 @@ package com.example.my_vk_client.dagger.module
 
 import com.example.my_vk_client.dagger.LiveQualifier
 import com.example.my_vk_client.dagger.MockQualifier
-import com.example.my_vk_client.network.Api
-import com.example.my_vk_client.network.ApiMock
+import com.example.my_vk_client.data.repo.network.Api
+import com.example.my_vk_client.data.repo.network.ApiMock
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

@@ -8,15 +8,22 @@ import com.example.my_vk_client.presentation.models.Profile
 import com.example.my_vk_client.presentation.models.WallItem
 import com.example.my_vk_client.presentation.models.WallPost
 
-class FeedAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class FeedAdapter(private val loadPostsPage: () -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val items: MutableList<WallItem> = mutableListOf()
-    private val PROFILE = 1
-    private val POST = 2
+
+    companion object {
+        const val PROFILE = 1
+        const val POST = 2
+    }
 
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (items.size - position == 5) {
+            loadPostsPage()
+        }
+
         when (holder) {
             is ProfileHolder -> holder.bind(items[position] as Profile)
             is PostHolder -> holder.bind(items[position] as WallPost)

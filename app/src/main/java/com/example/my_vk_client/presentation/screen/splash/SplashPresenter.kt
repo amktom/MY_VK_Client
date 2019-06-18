@@ -1,7 +1,7 @@
 package com.example.my_vk_client.presentation.screen.splash
 
 import com.arellomobile.mvp.InjectViewState
-import com.example.my_vk_client.domain.repo.SessionRepository
+import com.example.my_vk_client.domain.repo.repository.SessionRepository
 import com.example.my_vk_client.presentation.common.BasePresenter
 import com.example.my_vk_client.presentation.navigation.Screen
 import io.reactivex.Completable

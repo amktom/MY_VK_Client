@@ -1,11 +1,11 @@
-package com.example.my_vk_client.data.repo
+package com.example.my_vk_client.data.repo.repository
 
-import com.example.my_vk_client.converter.DataConverter
+import com.example.my_vk_client.data.repo.converter.DataConverter
 import com.example.my_vk_client.data.repo.source.AuthSource
 import com.example.my_vk_client.data.repo.source.SessionSource
-import com.example.my_vk_client.domain.repo.SessionRepository
+import com.example.my_vk_client.domain.repo.repository.SessionRepository
 import com.example.my_vk_client.domain.repo.entity.User
-import com.example.my_vk_client.response.ProfileResponse
+import com.example.my_vk_client.data.repo.response.ProfileResponse
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject

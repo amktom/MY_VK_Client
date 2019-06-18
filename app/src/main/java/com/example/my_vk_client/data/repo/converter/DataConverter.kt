@@ -1,4 +1,4 @@
-package com.example.my_vk_client.converter
+package com.example.my_vk_client.data.repo.converter
 
 interface DataConverter<T, K> {
 

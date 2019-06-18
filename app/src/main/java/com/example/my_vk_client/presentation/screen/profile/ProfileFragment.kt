@@ -9,21 +9,11 @@ import com.example.my_vk_client.R
 import com.example.my_vk_client.presentation.common.BaseFragment
 import com.example.my_vk_client.presentation.models.Profile
 import com.example.my_vk_client.presentation.models.WallPost
+import com.example.my_vk_client.presentation.screen.extensions.showSnackbar
 import kotlinx.android.synthetic.main.profile_layout.*
 import javax.inject.Inject
 
 class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
-    override fun showNetworkError() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun showProgress() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun hideProgress() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     companion object {
         fun createInstance() = ProfileFragment()
@@ -33,15 +23,17 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
     @InjectPresenter
     lateinit var presenter: ProfilePresenter
 
-    private val feedAdapter = FeedAdapter()
+    private val feedAdapter = FeedAdapter { presenter.loadPosts() }
 
     @ProvidePresenter
     fun providePresenter(): ProfilePresenter = presenter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        initToolbar()
+        initToolbar()
         initFeed()
+
+        profileRefreshLayout.setOnRefreshListener(presenter::refreshPosts)
     }
 
     override fun showProfile(profile: Profile) {
@@ -54,11 +46,30 @@ class ProfileFragment : BaseFragment(R.layout.profile_layout), ProfileView {
 
 
     private fun initToolbar() {
-        TODO("initialise ToolBar")
+        profileToolbar.inflateMenu(R.menu.menu_profile)
+        profileToolbar.setOnMenuItemClickListener {
+            if (it.itemId == R.id.edit_profile) {
+                presenter.onEditProfileClicked()
+            }
+            true
+        }
     }
 
     private fun initFeed() {
         feed.layoutManager = LinearLayoutManager(context)
         feed.adapter = feedAdapter
     }
+
+    override fun showNetworkError() {
+        feed.showSnackbar("Network error")
+    }
+
+    override fun showProgress() {
+        profileRefreshLayout.isRefreshing = true
+    }
+
+    override fun hideProgress() {
+        profileRefreshLayout.isRefreshing = false
+    }
+
 }

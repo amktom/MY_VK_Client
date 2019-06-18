@@ -1,8 +1,8 @@
-package com.example.my_vk_client.network
+package com.example.my_vk_client.data.repo.network
 
-import com.example.my_vk_client.request.LoginRequest
-import com.example.my_vk_client.response.PostResponse
-import com.example.my_vk_client.response.ProfileResponse
+import com.example.my_vk_client.data.repo.request.LoginRequest
+import com.example.my_vk_client.data.repo.response.PostResponse
+import com.example.my_vk_client.data.repo.response.ProfileResponse
 import io.reactivex.Single
 import retrofit2.http.*
 

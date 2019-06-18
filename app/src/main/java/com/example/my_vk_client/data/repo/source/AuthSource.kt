@@ -1,9 +1,9 @@
 package com.example.my_vk_client.data.repo.source
 
 import com.example.my_vk_client.dagger.MockQualifier
-import com.example.my_vk_client.network.Api
-import com.example.my_vk_client.request.LoginRequest
-import com.example.my_vk_client.response.ProfileResponse
+import com.example.my_vk_client.data.repo.network.Api
+import com.example.my_vk_client.data.repo.request.LoginRequest
+import com.example.my_vk_client.data.repo.response.ProfileResponse
 import io.reactivex.Single
 import javax.inject.Inject
 

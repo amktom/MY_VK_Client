@@ -4,7 +4,7 @@ class Profile (
     id: Long,
     val firstName: String,
     val lastName: String,
-    val avatarUrl: String,
+    var avatarUrl: String,
     val friends: String,
     val homeTown: String,
     val birthDate: String,

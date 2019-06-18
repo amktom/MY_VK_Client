@@ -1,6 +1,7 @@
 package com.example.my_vk_client.dagger.module
 
 import com.example.my_vk_client.dagger.FragmentScope
+import com.example.my_vk_client.presentation.screen.editprofile.EditProfileFragment
 import com.example.my_vk_client.presentation.screen.login.LoginFragment
 import com.example.my_vk_client.presentation.screen.profile.ProfileFragment
 import com.example.my_vk_client.presentation.screen.splash.SplashFragment
@@ -21,5 +22,9 @@ interface MainActivityModule {
     @FragmentScope
     @ContributesAndroidInjector
     fun provideLoginFragment(): LoginFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector
+    fun provideEditProfileFragment(): EditProfileFragment
 
 }
