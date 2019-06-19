@@ -15,12 +15,12 @@ import javax.inject.Inject
 class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile), EditProfileView {
 
     override fun setProfile(profile: Profile) {
+        profileEditImageView.loadCircleImage(profile.avatarUrl)
         editFirstName.setText(profile.firstName)
         editLastName.setText(profile.lastName)
         profileStatusEditTextView.setText(profile.status)
         townEditView.setText(profile.homeTown)
         birthdayEditView.setText(profile.birthDate)
-        profileEditImageView.loadCircleImage(profile.avatarUrl)
     }
 
     override fun setAvatar(path: String) {
@@ -65,7 +65,7 @@ class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile), EditPr
                     editFirstName.text.toString(),
                     editLastName.text.toString(),
                     "",
-                    friendsCountEditView.text.toString(),
+                    "162",
                     townEditView.text.toString(),
                     birthdayEditView.text.toString(),
                     phoneEditView.text.toString(),

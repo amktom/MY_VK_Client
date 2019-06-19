@@ -1,6 +1,7 @@
 package com.example.my_vk_client.data.repo.network
 
 import com.example.my_vk_client.data.repo.request.LoginRequest
+import com.example.my_vk_client.data.repo.request.ProfileRequest
 import com.example.my_vk_client.data.repo.response.PostResponse
 import com.example.my_vk_client.data.repo.response.ProfileResponse
 import io.reactivex.Single
@@ -17,8 +18,8 @@ interface Api {
     @GET("{user_id}/posts/page/{page}")
     fun getPosts(@Path("user_id") userId: Long, @Path("page") page: Int): Single<PostResponse>
 
-
-
+    @POST("profile/{user_id}")
+    fun saveProfile(@Path("user_id") id: Long, @Body profileRequest: ProfileRequest): Single<ProfileResponse>
 }
 
 

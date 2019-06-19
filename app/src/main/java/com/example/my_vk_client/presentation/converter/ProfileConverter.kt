@@ -11,10 +11,10 @@ class ProfileConverter @Inject constructor() : TwoWayConverter<User, Profile> {
             t.id,
             t.firstName,
             t.lastName,
-            t.avatar,
+            t.avatarUrl,
             t.friends,
-            t.city,
-            t.birthday,
+            t.homeTown,
+            t.birthDate,
             t.phone,
             t.status
         )

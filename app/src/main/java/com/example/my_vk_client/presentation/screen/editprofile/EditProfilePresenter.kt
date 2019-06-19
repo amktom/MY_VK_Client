@@ -32,7 +32,9 @@ class EditProfilePresenter @Inject constructor(
             .subscribe({
                 val profile = profileConverter.convert(it)
                 avatarUrl = profile.avatarUrl
+
                 viewState.setProfile(profile)
+
             }, {
                 viewState.showNetworkError()
             })

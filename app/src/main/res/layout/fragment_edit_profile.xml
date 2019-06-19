@@ -1,162 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-              xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/appBarLayout">
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/editProfileToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/actionBarSize"
-                android:background="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
-                app:title="Редактирование профиля"/>
+            android:id="@+id/editProfileToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:background="@color/white"
+            app:elevation="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Редактирование профиля" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <ProgressBar
-            android:id="@+id/editProgressbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:visibility="invisible"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/editProgressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-            android:id="@+id/profileEditImageView"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:src="@tools:sample/avatars"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"/>
+        android:id="@+id/profileEditImageView"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:src="@tools:sample/avatars" />
 
     <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editFirstName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/profileEditImageView"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Андрей"/>
+        android:id="@+id/editFirstName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/profileEditImageView"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        tools:text="Андрей" />
 
     <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/editFirstName"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Морозов"/>
+        android:id="@+id/editLastName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        app:layout_constraintStart_toStartOf="@id/profileEditImageView"
+        app:layout_constraintTop_toBottomOf="@id/editFirstName"
+        tools:text="Морозов" />
 
-    <ImageView
-            android:id="@+id/profileStatusEditImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_chat_bubble_black_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editLastName" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editStatusInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Статус"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileEditImageView">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/profileStatusEditTextView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profileStatusEditImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profileStatusEditImage"
-            app:layout_constraintTop_toTopOf="@+id/profileStatusEditImage"
+            android:drawableStart="@drawable/ic_chat_bubble_black_24dp"
+            android:drawablePadding="8dp"
+            android:inputType="textCapWords"
             tools:text="Текущий статус" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-            android:id="@+id/profileFriendsCountEditImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_people_black_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileStatusEditImage" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editTownInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Город"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editStatusInputLayout">
 
-    <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/friendsCountEditView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profileFriendsCountEditImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profileFriendsCountEditImage"
-            app:layout_constraintTop_toTopOf="@+id/profileFriendsCountEditImage"
-            tools:text="162" />
-
-    <ImageView
-            android:id="@+id/profileTownEditImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_home_black_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileFriendsCountEditImage" />
-
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/townEditView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profileTownEditImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profileTownEditImage"
-            app:layout_constraintTop_toTopOf="@+id/profileTownEditImage"
-            tools:text="Томск" />
+            android:drawableStart="@drawable/ic_home_black_24dp"
+            android:drawablePadding="8dp"
+            android:inputType="textCapWords"
+            tools:text="Город" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-            android:id="@+id/profileBirthdayEditImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_cake_black_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileTownEditImage" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editBirthdayInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="(DD.MM.YYYY)"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTownInputLayout">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/birthdayEditView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profileBirthdayEditImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profileBirthdayEditImage"
-            app:layout_constraintTop_toTopOf="@+id/profileBirthdayEditImage"
-            tools:text="27 марта 1997" />
+            android:drawableStart="@drawable/ic_cake_black_24dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            tools:text="27.03.1997" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <ImageView
-            android:id="@+id/profilePhoneEditImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_phone_black_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profileBirthdayEditImage" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editPhoneInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Телефон"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBirthdayInputLayout">
 
-    <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phoneEditView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profilePhoneEditImage"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/profilePhoneEditImage"
-            app:layout_constraintTop_toTopOf="@+id/profilePhoneEditImage"
-            tools:text="+7(960)976-12-09" />
+            android:drawableStart="@drawable/ic_phone_black_24dp"
+            android:drawablePadding="8dp"
+            android:inputType="number"
+            tools:text="+7(960)-976-12-09" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/profilePhoneEditImage"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:src="@drawable/ic_phone_black_24dp"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/profileBirthdayEditImage" />-->
+
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+        <!--android:id="@+id/phoneEditView"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/profilePhoneEditImage"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/profilePhoneEditImage"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/profilePhoneEditImage"-->
+        <!--tools:text="+7(960)976-12-09" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
