@@ -57,7 +57,7 @@ class EditProfileFragment : BaseFragment(R.layout.fragment_edit_profile), EditPr
     }
 
     private fun initToolBar() {
-        editProfileToolbar.inflateMenu((R.menu.menu_profile))
+        editProfileToolbar.inflateMenu((R.menu.save_edit_profile))
         editProfileToolbar.setOnMenuItemClickListener {
             if (it.itemId == R.id.save_profile) {
                 val profile = Profile(
